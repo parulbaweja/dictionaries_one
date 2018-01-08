@@ -1,4 +1,6 @@
+import sys
 from string import punctuation
+
 
 def get_word_count(filename):
 
@@ -17,9 +19,8 @@ def get_word_count(filename):
     return word_count
 
 
-for word, num in get_word_count('test.txt').items():
-    print "{} {}".format(word, num)
+# for word, num in get_word_count(sys.argv[1]).items():
+#     print "{} {}".format(word, num)
 
-for word, num in get_word_count('twain.txt').iteritems():
+for word, num in get_word_count(sys.argv[1]).iteritems():
     print "{} {}".format(word, num)
-
