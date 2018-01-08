@@ -1,13 +1,18 @@
+from string import punctuation
+
 def get_word_count(filename):
 
     word_count = {}
 
     with open(filename) as paragraph:
         for line in paragraph:
-            line = line.rstrip()
-            words = line.split(" ")
+            line = line.strip()
+            words = line.split()
+
             for word in words:
+                word = word.lower().strip(punctuation)
                 word_count[word] = word_count.get(word, 0) + 1
+
 
     return word_count
 
